@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users List</title>
+</head>
+<body>
+<p>WELCOME</p>
+<!--<p>Welcome <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>-->
+<button type="submit" style="background-color:red;color:white;"><a th:href="@{/logout}">Sign out</a> </button>
+<h1>List of users</h1>
+<table>
+    <thead>
+    <tr>
+        <th>User ID</th>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
